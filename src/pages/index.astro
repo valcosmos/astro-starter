@@ -23,7 +23,9 @@ const data = (await res.json()) as { title: string }[]
 	</head>
 	<body>
 		<h1>{obj.favorites[isVisible ? 1 : 0].toUpperCase()}</h1>
+		===
 		{obj.favorites.map((item) => <li>{item.toUpperCase()}</li>)}
+		===
 		{data.map((item) => <li>{item.title}</li>)}
 	</body>
 </html>
