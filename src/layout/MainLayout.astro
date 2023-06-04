@@ -1,6 +1,7 @@
 ---
 import MainHeader from './MainHeader.astro'
 import '../styles/global.css'
+import Footer from '../components/Footer.astro';
 
 const { title = 'My Astro Blog', description = 'default title' } = Astro.props
 ---
@@ -8,8 +9,9 @@ const { title = 'My Astro Blog', description = 'default title' } = Astro.props
 <html lang="en">
   <MainHeader {title} {description} />
   <body>
-    <h1>Main Layout</h1>
-    <slot>Defauot Text</slot>
-    <slot name="hi" />
+    
+    <slot>Default Text</slot>
+
+    <Footer />
   </body>
 </html>
