@@ -4,6 +4,7 @@ title: A Post title
 date: 2023-06-07
 author: Cupid Valentine
 description: this is description
+category: category
 ---
 
 ## Post1
