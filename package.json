@@ -16,6 +16,6 @@
   "devDependencies": {
     "postcss": "^8.4.24",
     "postcss-preset-env": "^8.4.2",
-    "sass": "^1.62.1"
+    "sass": "^1.63.2"
   }
 }
