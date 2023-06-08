@@ -1,5 +1,6 @@
 ---
-import { formatDate, slugify } from '../js/utils';
+import { Image } from '@astrojs/image/components'
+import { formatDate, slugify } from '../js/utils'
 import MainLayout from './MainLayout.astro'
 
 const { frontmatter } = Astro.props
@@ -14,7 +15,17 @@ const { title, description, date, category, author, image } = frontmatter
       <h1 class="h2">{title}</h1>
       <p>by <a href={`/author/${slugify(author)}`}>{author}</a>· {formatDate(date)}</p>
     </div>
-    <img src="" alt="" />
+    <Image
+      src={image.src}
+      width={1200}
+      height={600}
+      alt={image.alt}
+      format="avif"
+      fit="cover"
+      quality={80}
+      aspectRatio={'5:2'}
+      class={'hero-image'}
+    />
   </header>
   <div class="post-content">
     <div class="content">
