@@ -11,9 +11,9 @@ const { title, description, date, category, author, image } = frontmatter
 ---
 
 <!-- <pre>{JSON.stringify(post.frontmatter, null, 2)}</pre> -->
-<article class="container">
+<article class="card">
   <small><a href={`/category/${slugify(category)}`} class="badge">{category}</a></small>
-  <a href={url} tabindex="-1">
+  <a href={url} tabindex="-1" arial-hidden="true">
     <Image
       src={image.src}
       width={400}
