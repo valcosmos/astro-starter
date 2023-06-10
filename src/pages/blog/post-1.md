@@ -9,6 +9,7 @@ image: {
   src: "/images/post-1.jpg",
   alt: "A picture of a coder",
 }
+draft: true
 ---
 
 ## Post1

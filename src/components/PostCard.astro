@@ -1,16 +1,19 @@
 ---
 import { Image } from '@astrojs/image/components'
 import { formatDate, slugify } from '../js/utils'
+import Link from './Link.astro'
 
-const { frontmatter, url } = Astro.props
+const { frontmatter, url, tagType } = Astro.props
+
+const Tag = tagType
 
 const { title, description, date, category, author, image } = frontmatter
 ---
 
 <!-- <pre>{JSON.stringify(post.frontmatter, null, 2)}</pre> -->
-<div class="container">
+<article class="container">
   <small><a href={`/category/${slugify(category)}`} class="badge">{category}</a></small>
-  <a href={url}>
+  <a href={url} tabindex="-1">
     <Image
       src={image.src}
       width={400}
@@ -23,7 +26,14 @@ const { title, description, date, category, author, image } = frontmatter
     />
   </a>
   <div class="content">
-    <h1 class="h2">{title}</h1>
-    <p>by <a href={`/author/${slugify(author)}`}>{author}</a>· {formatDate(date)}</p>
+    <div>
+      <Tag class="h3">
+        <a href={url}>{title}</a>
+      </Tag>
+      <small>by <a href={`/author/${slugify(author)}`}>{author}</a>· {formatDate(date)}</small>
+    </div>
+    <p>{description}</p>
+
+    <Link  href={url} text='Read Post' style="secondary" />
   </div>
-</div>
+</article>
