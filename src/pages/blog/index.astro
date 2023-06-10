@@ -1,14 +1,22 @@
 ---
+import PostCard from '../../components/PostCard.astro';
 import MainLayout from '../../layout/MainLayout.astro'
+
+const allPosts = await Astro.glob('./*.md')
+
 ---
 
-<MainLayout title="Index page" description="my index page">
-  <ul>
+<MainLayout title="My blog" description="my blog page">
+  <!-- <ul>
     <li><a href="blog/post-1/">Post 1</a></li>
     <li><a href="blog/post-2/">Post 2</a></li>
     <li><a href="blog/post-3/">Post 3</a></li>
     <li><a href="blog/post-4/">Post 4</a></li>
     <li><a href="blog/post-5/">Post 5</a></li>
     <li><a href="blog/post-6/">Post 6</a></li>
-  </ul>
+  </ul> -->
+  <!-- {
+    allPosts.map(post=><PostCard {post} />)
+  } -->
+  <PostCard frontmatter={allPosts[0].frontmatter} url={allPosts[0].url} />
 </MainLayout>

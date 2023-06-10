@@ -1,4 +1,6 @@
 export function slugify(text) {
+
+  if (text === undefined) return ''
   return text
     .toString()
     .toLowerCase()
