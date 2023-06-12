@@ -18,7 +18,7 @@ export function formatDate(date: number) {
 
 export function formatBlogPosts(
   posts: any[],
-  { filterOutDrafts = true, filterOutFuturePosts = true, sortByDate = true, limit = undefined } = {}
+  { filterOutDrafts = true, filterOutFuturePosts = true, sortByDate = true, limit = 10 } = {}
 ) {
   const filteredPosts = posts.reduce((acc, post) => {
     const { date, draft } = post.frontmatter
