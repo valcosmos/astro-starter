@@ -9,8 +9,6 @@ export async function getStaticPaths() {
 
   const allAuthors = [...new Set(formattedPosts.map((post) => post.frontmatter.author).flat())]
 
-  
-
   return allAuthors.map((author: any) => {
     const authorPosts = formattedPosts.filter((post) => post.frontmatter.author === author)
     return {
