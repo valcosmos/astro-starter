@@ -30,7 +30,9 @@ const { name } = Astro.props
 const allPosts = await Astro.glob('../blog/*.md')
 const formattedPosts = formatBlogPosts(allPosts)
 
-const catPosts = formattedPosts.filter((post) => slugify(post.frontmatter.category) === category)
+const catPosts = formattedPosts.filter(
+  (post: any) => slugify(post.frontmatter.category) === category
+)
 ---
 
 <MainLayout title={name}>
