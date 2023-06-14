@@ -16,7 +16,9 @@ const formattedPosts = formatBlogPosts(allPosts, { sortByDate: false })
 
 const relatedPosts = formattedPosts
   .filters(
-    (post: any) => post.frontmatter.category === category && post.frontmatter.title !== title
+    (post: any) =>
+      post.frontmatter.category.toLowercase() === category.toLowercase() &&
+      post.frontmatter.title !== title
   )
   .slice(0, 3)
 ---
