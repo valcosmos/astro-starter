@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import { formatDate, slugify } from '../js/utils'
 const { title, description, date, category, author, image } = Astro.props
 ---
@@ -18,7 +18,6 @@ const { title, description, date, category, author, image } = Astro.props
     format="avif"
     fit="cover"
     quality={80}
-    aspectRatio={'5:2'}
     class={'hero-image'}
   />
 </header>
